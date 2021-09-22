@@ -1,0 +1,72 @@
+{
+    "name": "miit2org",
+    "version": "1.0.0",
+    "client": {
+        "identity": {
+            "type": "X.509",
+            "credentials": {
+                "certificate": "-----BEGIN CERTIFICATE-----\nMIICmDCCAj+gAwIBAgIUXPsQMq2dKZu9Qnby0DrAliwhbD8wCgYIKoZIzj0EAwIw\nZDELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0ppYW5nc3UxEDAOBgNVBAcTB05hbmpp\nbmcxFjAUBgNVBAoTDW9yZzEubWlpdDJvcmcxGTAXBgNVBAMTEGNhLm9yZzEubWlp\ndDJvcmcwHhcNMjEwOTE1MTAxNDAwWhcNMjIwOTE1MTAxOTAwWjBgMQswCQYDVQQG\nEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNVBAoTC0h5cGVybGVk\nZ2VyMQ4wDAYDVQQLEwVhZG1pbjESMBAGA1UEAxMJb3JnMWFkbWluMFkwEwYHKoZI\nzj0CAQYIKoZIzj0DAQcDQgAEhx/+a/miqE0O4MJuqFa14SlV1NYhBHAcFa46m998\nINoUbyeR3LrENetJXo0B2a1iNzdY2zNrzfoRCzhX9IEkHaOB0jCBzzAOBgNVHQ8B\nAf8EBAMCB4AwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUhR2RK2oxHn2zjnhyBAEb\ngAN0DIswHwYDVR0jBBgwFoAUTI6zJeriKvb1xTdUpAUm6cwiy+gwEgYDVR0RBAsw\nCYIHYXNoYnVsZTBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5BZmZpbGlhdGlv\nbiI6IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZzFhZG1pbiIsImhmLlR5cGUiOiJh\nZG1pbiJ9fTAKBggqhkjOPQQDAgNHADBEAiBSi2NU8g836XOzPQ/GXyS0cChLoTXO\nGckDUkt0DNu0qQIgMa6aRhtnciYxjZJD9NVeLmkEXFB9eduZurgBdfGQ8Tg=\n-----END CERTIFICATE-----\n",
+                "privateKey": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgkS8vyFIxCKd7tUE7\n9/3c19YPcH0dICj16X73O9HzYoWhRANCAASHH/5r+aKoTQ7gwm6oVrXhKVXU1iEE\ncBwVrjqb33wg2hRvJ5HcusQ160lejQHZrWI3N1jbM2vN+hELOFf0gSQd\n-----END PRIVATE KEY-----\n"
+            },
+            "mspId": "org1MSP"
+        }
+    },
+    "channels": {
+        "testchannel": {
+            "orderers": [
+                "orderer.orderOrg.miit2org"
+            ],
+            "peers": {
+                "peer1.org1.miit2org": {}
+            },
+            "connection": {
+                "timeout": {
+                    "peer": {
+                        "endorser": "6000",
+                        "eventHub": "6000",
+                        "eventReg": "6000"
+                    }
+                }
+            }
+        }
+    },
+    "orderers": {
+        "orderer.orderOrg.miit2org": {
+            "url": "grpcs://orderer.orderOrg.miit2org:20007",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICHzCCAcWgAwIBAgIUb3vinnw87lHh/b+rrOxssogG3oUwCgYIKoZIzj0EAwIw\nbDELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0ppYW5nc3UxEDAOBgNVBAcTB05hbmpp\nbmcxGjAYBgNVBAoTEW9yZGVyT3JnLm1paXQyb3JnMR0wGwYDVQQDExRjYS5vcmRl\nck9yZy5taWl0Mm9yZzAeFw0yMTA5MTUxMDE0MDBaFw0zNjA5MTExMDE0MDBaMGwx\nCzAJBgNVBAYTAkNOMRAwDgYDVQQIEwdKaWFuZ3N1MRAwDgYDVQQHEwdOYW5qaW5n\nMRowGAYDVQQKExFvcmRlck9yZy5taWl0Mm9yZzEdMBsGA1UEAxMUY2Eub3JkZXJP\ncmcubWlpdDJvcmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS/oeJAqZ6Hg0N1\nj1oIaCoFjcfptHkPbym5B8t5d6x71BDJau2v1VSgwJCPQNVNam9h0t3GObxqBNyL\naZpiUzkoo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQU6nKTbQ+xY6bI4Mv+2dee8j9FWhYwCgYIKoZIzj0EAwIDSAAwRQIh\nAPZSFF23MndAX11Lu6kruwEr3nWCVUebs8Ou+lGTotefAiASZy5bzGlPkqs/e8Af\n4BqogHBkES1zsr/WTfjzbp3KrA==\n-----END CERTIFICATE-----\n"
+            }
+        }
+    },
+    "organizations": {
+        "org1MSP": {
+            "mspid": "org1MSP",
+            "peers": [
+                "peer1.org1.miit2org"
+            ],
+            "certificateAuthorities": [
+                "ca.org1.miit2org"
+            ]
+        }
+    },
+    "peers": {
+        "peer1.org1.miit2org": {
+            "url": "grpcs://peer1.org1.miit2org:20003",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICDjCCAbWgAwIBAgIUBIMV2zQx/hORQ9c+frGaucz/5EIwCgYIKoZIzj0EAwIw\nZDELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0ppYW5nc3UxEDAOBgNVBAcTB05hbmpp\nbmcxFjAUBgNVBAoTDW9yZzEubWlpdDJvcmcxGTAXBgNVBAMTEGNhLm9yZzEubWlp\ndDJvcmcwHhcNMjEwOTE1MTAxNDAwWhcNMzYwOTExMTAxNDAwWjBkMQswCQYDVQQG\nEwJDTjEQMA4GA1UECBMHSmlhbmdzdTEQMA4GA1UEBxMHTmFuamluZzEWMBQGA1UE\nChMNb3JnMS5taWl0Mm9yZzEZMBcGA1UEAxMQY2Eub3JnMS5taWl0Mm9yZzBZMBMG\nByqGSM49AgEGCCqGSM49AwEHA0IABExUAijNOMZDqZtD075EReRcQs48GK7QNodm\nqgxIAQow+t3Q7XasrKE2zmOzRyRfufOM11qn6yNXc0rY7lOCfV6jRTBDMA4GA1Ud\nDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMB0GA1UdDgQWBBRMjrMl6uIq\n9vXFN1SkBSbpzCLL6DAKBggqhkjOPQQDAgNHADBEAiAigu1+sIOoYKeg+xLJqMG2\noG3I1rPkpZzybVzBMsZIUgIgKB/awcPxmY+jLxydpFcpM5xrs4n1S3jpE/ZmyVZO\nxyw=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.org1.miit2org": {
+            "url": "https://ca.org1.miit2org:20001",
+            "caName": "ca.org1.miit2org",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICDjCCAbWgAwIBAgIUBIMV2zQx/hORQ9c+frGaucz/5EIwCgYIKoZIzj0EAwIw\nZDELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0ppYW5nc3UxEDAOBgNVBAcTB05hbmpp\nbmcxFjAUBgNVBAoTDW9yZzEubWlpdDJvcmcxGTAXBgNVBAMTEGNhLm9yZzEubWlp\ndDJvcmcwHhcNMjEwOTE1MTAxNDAwWhcNMzYwOTExMTAxNDAwWjBkMQswCQYDVQQG\nEwJDTjEQMA4GA1UECBMHSmlhbmdzdTEQMA4GA1UEBxMHTmFuamluZzEWMBQGA1UE\nChMNb3JnMS5taWl0Mm9yZzEZMBcGA1UEAxMQY2Eub3JnMS5taWl0Mm9yZzBZMBMG\nByqGSM49AgEGCCqGSM49AwEHA0IABExUAijNOMZDqZtD075EReRcQs48GK7QNodm\nqgxIAQow+t3Q7XasrKE2zmOzRyRfufOM11qn6yNXc0rY7lOCfV6jRTBDMA4GA1Ud\nDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMB0GA1UdDgQWBBRMjrMl6uIq\n9vXFN1SkBSbpzCLL6DAKBggqhkjOPQQDAgNHADBEAiAigu1+sIOoYKeg+xLJqMG2\noG3I1rPkpZzybVzBMsZIUgIgKB/awcPxmY+jLxydpFcpM5xrs4n1S3jpE/ZmyVZO\nxyw=\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

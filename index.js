@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const ccpPath = path.resolve(__dirname, "user1.json");
+const ccpPath = path.resolve(__dirname, "user.json");
 const { Gateway } = require("fabric-network");
 
 async function invokeChainCode() {
@@ -13,11 +13,15 @@ async function invokeChainCode() {
     identity,
     discovery: { enabled: false, asLocalhost: false },
   });
+  const channels = [];
+  for (var channel in ccp.channels) {
+    channels.push(channel);
+  }
 
-  const network = await gateway.getNetwork("ch01");
-  const contract = network.getContract("test2");
+  const network = await gateway.getNetwork(channels[0]);
+  const contract = network.getContract("evidence");
   // console.log(contract);
-  const result = await contract.submitTransaction("ReadAsset", ["asset1"]);
+  const result = await contract.submitTransaction("put", ["test"]);
   console.log(result.toString());
   await gateway.disconnect();
 }
