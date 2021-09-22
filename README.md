@@ -26,7 +26,7 @@
 ```javascript
   const result = await contract.submitTransaction("put", ["test"]);
 ```
-###返回存证数据的hash
+### 返回存证数据的hash
 ## 查看存证
 ```javascript
   const result = await contract.submitTransaction("get", ["03347a7f49bd3b6b94b759986bd31b421bb82f9aad365934db732960f99eed85"]);
